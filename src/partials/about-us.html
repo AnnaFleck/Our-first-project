@@ -1,21 +1,31 @@
-<section class="about-us">
-
-    <div>
-        <h1 class="about-us-title">About Us</h1>
-        <p class="about-us-text">Welcome to our premium watch collection, where luxury and style meet functionality and
-            precision. Our selection of
-            timepieces embodies the very best in Swiss craftsmanship and engineering, ensuring that you'll always have a
-            reliable
-            and stylish accessory on your wrist.
-        </p>
-        <p class="about-us-text">At our premium watch collection, we believe that a watch is more than just a timekeeping device
-            – it's a statement piece
-            that reflects your personality and style. So why settle for anything less than the best?
-        </p>
-        <button type="button" class="view-btn">View catalog</button>
-        <div>
-            <img class="img-watch" src="/src/img/about-watch.png" alt="">
+<section class="about-us" id="about-us">
+    <div class="about-wrap container">
+        <div class="about-us-contant">
+            <h2 class="about-us-title">About Us</h2>
+            <p class="about-us-text">
+                Welcome to our premium watch collection, where luxury and style meet
+                functionality and precision. Our selection of timepieces embodies the
+                very best in Swiss craftsmanship and engineering, ensuring that you'll
+                always have a reliable and stylish accessory on your wrist.
+            </p>
+            <p class="about-us-text">
+                At our premium watch collection, we believe that a watch is more than
+                just a timekeeping device – it's a statement piece that reflects your
+                personality and style. So why settle for anything less than the best?
+            </p>
+            <div class="about-button">
+                <button type="button" class="view-btn">
+                    <a href="#catalog">View catalog</a>
+                </button>
+            </div>
+        </div>
+        <div class="about-us-image-container">
+            <picture class="about-watch-img">
+                <source media="(min-width: 1280px)" srcset="/img/about-watch.png 1x, /img/about-dsktp-2x.png 2x" />
+                <source media="(min-width: 768px)" srcset="/img/about-tab.png 1x, /img/about-tab-2x.png 2x" />
+                <source media="(min-width: 320px)" srcset="/img/about-mob.png 1x, /img/about-mob-2x.png 2x" />
+                <img src="/img/about-watch.png" alt="about-watch" width="530" />
+            </picture>
         </div>
     </div>
-
 </section>

@@ -54,11 +54,8 @@
   margin-bottom: 60px;
 }
 
-.img-watch-about-mob {}
-
 @media screen and (min-width: 768px) {
-  .about-wrap {}
-
+  
   .about-us-contant {
     flex-direction: column;
     display: inline-block;
@@ -88,7 +85,7 @@
     color: rgba(12, 12, 12, 0.7);
   }
 
-  .about-button {}
+
 
   .about-us-image-container {
     border-radius: 50px;

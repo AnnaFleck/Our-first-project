@@ -138,6 +138,7 @@
     align-items: flex-end;
     justify-content: flex-start;
     flex-direction: column;
+    margin: 40px;
   }
 
   .img-about-us {

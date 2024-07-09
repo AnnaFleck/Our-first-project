@@ -1,22 +1,58 @@
-$(document).ready(function () {
-  $('a').on('click', function (event) {
-    if (this.hash !== '') {
+document.addEventListener('DOMContentLoaded', function () {
+  var links = document.querySelectorAll('a[href^="#"]');
+  var headerHeight = document.querySelector('header').offsetHeight; // Висота заголовка
+
+  links.forEach(function (link) {
+    link.addEventListener('click', function (event) {
       event.preventDefault();
 
-      var hash = this.hash;
+      var hash = this.getAttribute('href');
 
-      $('html, body').animate(
-        {
-          scrollTop: $(hash).offset().top,
-        },
-        800,
-        function () {
-          window.location.hash = hash;
+      if (hash === '#header') {
+        // Прокрутка до початку сторінки з урахуванням висоти заголовка
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      } else {
+        var targetId = hash.substring(1);
+        var targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+          var targetOffsetTop = targetElement.getBoundingClientRect().top + window.pageYOffset;
+
+          // Анімаційна прокрутка з урахуванням висоти заголовка
+          smoothScrollTo(targetOffsetTop - headerHeight);
         }
-      );
-    }
+      }
+    });
   });
+
+  function smoothScrollTo(targetPosition) {
+    var startPosition = window.pageYOffset;
+    var distance = targetPosition - startPosition;
+    var startTime = null;
+    var duration = 800; // Час анімації
+
+    function animation(currentTime) {
+      if (startTime === null) startTime = currentTime;
+      var timeElapsed = currentTime - startTime;
+      var ease = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+      window.scrollTo(0, ease);
+      if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
+
+    function easeInOutQuad(t, b, c, d) {
+      t /= d / 2;
+      if (t < 1) return c / 2 * t * t + b;
+      t--;
+      return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+
+    requestAnimationFrame(animation);
+  }
 });
+
 
 // CATALOG
 

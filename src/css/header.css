@@ -158,6 +158,7 @@ ul {
   justify-content: space-between;
 }
 
+
 .menu-close-btn {
   background-color: transparent;
   border: none;
@@ -239,6 +240,10 @@ ul {
 }
 
 @media screen and (max-width: 375px) {
+  html {
+      scroll-padding-top: 74px;
+    }
+    
   .header-container {
     max-width: 374px;
   }
@@ -296,6 +301,10 @@ ul {
 }
 
 @media screen and (min-width: 375px) {
+  html {
+      scroll-padding-top: 74px;
+    }
+
   .header-container {
     max-width: 375px;
   }
@@ -364,6 +373,10 @@ ul {
 }
 
 @media screen and (min-width: 768px) {
+  html {
+      scroll-padding-top: 92px;
+    }
+
   .header-container {
     max-width: 768px;
   }
@@ -428,6 +441,10 @@ ul {
 }
 
 @media screen and (min-width: 1280px) {
+  html {
+      scroll-padding-top: 88px;
+    }
+
   .header-container {
     max-width: 1280px;
   }
@@ -453,6 +470,7 @@ ul {
   .menue {
     display: none;
   }
+
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 2),
